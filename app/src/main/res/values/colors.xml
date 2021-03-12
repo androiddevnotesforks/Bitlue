@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!--Color palette-->
+
+    <color name="burgundy_200">#ea9aae</color> <!--Color primary (dark)-->
+    <color name="burgundy_700">#ac485c</color> <!--Color primary (light)-->
+    <color name="burgundy_800">#964357</color> <!--Color primary variant (dark)-->
+    <color name="burgundy_900">#6f3a4b</color> <!--Color primary variant (light)-->
+
+    <color name="greenish_400">#48ac98</color> <!--Color secondary-->
+    <color name="greenish_800">#2b6f5d</color> <!--Color secondary variant-->
+
+    <color name="red_400">#fc434c</color> <!--Color error (dark)-->
+    <color name="red_800">#d40021</color> <!--Color error (light)-->
+
+    <!--Color surface (light), color on primary (light), color on error (light), -->
+    <!--color on surface (dark), color on surface (dark)-->
+    <color name="white_50">#ffffff</color>
+
+    <color name="black_800">#121212</color> <!--Color surface (dark)-->
+    <!--Color on secondary (light), color on background (light),-->
+    <!--color on surface (light)-->
+    <color name="black_900">#000000</color>
+
 </resources>

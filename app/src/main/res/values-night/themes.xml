@@ -1,16 +1,24 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
+    <!--Top level DayNight theme to be used in AndroidManifest.xml-->
     <style name="Theme.Bitlue" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+        <!--Material color attributes (dark theme) -->
+        <item name="colorPrimary">@color/burgundy_200</item>
+        <item name="colorPrimaryVariant">@color/burgundy_700</item>
+        <item name="colorSecondary">@color/greenish_400</item>
+        <item name="colorSecondaryVariant">@color/greenish_400</item>
+        <item name="android:colorBackground">@color/black_900</item>
+        <item name="colorSurface">@color/black_800</item>
+        <item name="colorError">@color/red_400</item>
+
+        <item name="colorOnPrimary">@color/black_900</item>
+        <item name="colorOnSecondary">@color/black_900</item>
+        <item name="colorOnBackground">@color/white_50</item>
+        <item name="colorOnSurface">@color/white_50</item>
+        <item name="colorOnError">@color/black_900</item>
+
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
     </style>
 </resources>
