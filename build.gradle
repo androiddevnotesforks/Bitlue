@@ -3,7 +3,7 @@ buildscript {
     ext.kotlin_version = "1.4.21"
     ext.hilt_version = "2.31.2-alpha"
     ext.hilt_androidx_version = "1.0.0-alpha03"
-    ext.nav_version = "2.3.3"
+    ext.nav_version = "2.3.4"
     ext.androidKtx_version = "2.3.0"
 
     repositories {
