@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bitcoinValueFragment">
+
+    <fragment
+        android:id="@+id/bitcoinValueFragment"
+        android:name="com.carlosmesquita.technicaltest.n26.bitlue.ui.bitcoin_value.BitcoinValueFragment"
+        android:label="fragment_bitcoin_value"
+        tools:layout="@layout/fragment_bitcoin_value">
+
+        <action
+            android:id="@+id/to_filterSettingsDialogFragment"
+            app:destination="@id/filterSettingsDialogFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/filterSettingsDialogFragment"
+        android:name="com.carlosmesquita.technicaltest.n26.bitlue.ui.settings.filter.FilterSettingsDialogFragment"
+        android:label="fragment_filter_settings"
+        tools:layout="@layout/fragment_dialog_filter_settings" />
+</navigation>
