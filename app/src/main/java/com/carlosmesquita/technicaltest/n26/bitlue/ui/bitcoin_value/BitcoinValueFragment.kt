@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.carlosmesquita.technicaltest.n26.bitlue.R
 import com.carlosmesquita.technicaltest.n26.bitlue.databinding.FragmentBitcoinValueBinding
 import com.carlosmesquita.technicaltest.n26.bitlue.ui.MainViewModel
@@ -22,6 +23,10 @@ class BitcoinValueFragment : Fragment(R.layout.fragment_bitcoin_value) {
         super.onViewCreated(view, savedInstanceState)
 
         _binding = FragmentBitcoinValueBinding.bind(view)
+
+        binding.fab.setOnClickListener {
+            findNavController().navigate(R.id.to_filterSettingsDialogFragment)
+        }
     }
 
     override fun onDestroyView() {
