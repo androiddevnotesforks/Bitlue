@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.carlosmesquita.technicaltest.n26.bitlue">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".BitlueApplication"
         android:allowBackup="true"

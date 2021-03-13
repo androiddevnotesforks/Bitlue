@@ -5,6 +5,7 @@ buildscript {
     ext.hilt_androidx_version = "1.0.0-alpha03"
     ext.nav_version = "2.3.4"
     ext.androidKtx_version = "2.3.0"
+    ext.retrofitVersion = "2.9.0"
 
     repositories {
         google()
