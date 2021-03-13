@@ -17,7 +17,7 @@
     </style>
 
     <style name="Widget.Bitlue.BottomSheet.Modal" parent="Widget.MaterialComponents.BottomSheet.Modal">
-        <item name="shapeAppearanceOverlay">?attr/shapeAppearanceLargeComponent</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Bitlue.BottomSheet.Modal</item>
     </style>
 
     <!--Navigation Drawer-->

@@ -19,3 +19,7 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Fragment
+# Based on: https://dev4phones.wordpress.com/2020/04/23/error-unable-to-instantiate-fragment-androidx-navigation-fragment-navhostfragment-make-sure-class-name-exists/
+-keep class * extends androidx.fragment.app.Fragment{}

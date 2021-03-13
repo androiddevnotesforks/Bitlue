@@ -16,6 +16,15 @@
         <!--Your custom shape here-->
     </style>
 
+    <!-- ================ Shape Appearances Overlays ================ -->
+    <!--Shape Appearance overlay for bottom sheets -->
+    <style name="ShapeAppearanceOverlay.Bitlue.BottomSheet.Modal" parent="ShapeAppearance.Bitlue.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeTopRight">@dimen/x_large</item>
+        <item name="cornerSizeTopLeft">@dimen/x_large</item>
+    </style>
+
     <!--Shape Appearance overlay for ShapeableImageView -->
     <style name="ShapeAppearanceOverlay.Bitlue.Image" parent="">
         <item name="cornerSize">0dp</item>
