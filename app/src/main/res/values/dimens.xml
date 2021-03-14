@@ -7,4 +7,5 @@
     <dimen name="x_large">16dp</dimen>
     <dimen name="xx_large">24dp</dimen>
     <dimen name="xxx_large">32dp</dimen>
+    <dimen name="xxxx_large">40dp</dimen>
 </resources>
