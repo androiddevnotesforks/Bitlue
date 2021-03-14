@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import com.carlosmesquita.technicaltest.n26.bitlue.R
 import com.carlosmesquita.technicaltest.n26.bitlue.databinding.FragmentBitcoinValueBinding
 import com.carlosmesquita.technicaltest.n26.bitlue.ui.MainViewModel
@@ -22,11 +21,17 @@ class BitcoinValueFragment : Fragment(R.layout.fragment_bitcoin_value) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        _binding = FragmentBitcoinValueBinding.bind(view)
-
-        binding.fab.setOnClickListener {
-            findNavController().navigate(R.id.to_filterSettingsDialogFragment)
+        _binding = FragmentBitcoinValueBinding.bind(view).apply {
+            lifecycleOwner = this@BitcoinValueFragment.viewLifecycleOwner
+            viewModel = this@BitcoinValueFragment.viewModel
         }
+
+        viewModel.bitcoinValues.observe(viewLifecycleOwner) {
+            binding.valuesChart.setBitcoinValues(it)
+        }
+
+        // TODO Hide for now until [FilterSettingsDialogFragment] is implemented
+        binding.fab.hide()
     }
 
     override fun onDestroyView() {

@@ -17,9 +17,14 @@
     <!--color on surface (dark), color on surface (dark)-->
     <color name="white_50">#ffffff</color>
 
+    <color name="gray_light">#C8C8C8</color>
+    <color name="gray_med">#7D7D7D</color>
+    <color name="gray_dark">#373737</color>
+
     <color name="black_800">#121212</color> <!--Color surface (dark)-->
     <!--Color on secondary (light), color on background (light),-->
     <!--color on surface (light)-->
     <color name="black_900">#000000</color>
 
+    <color name="transparent">#00FFFFFF</color>
 </resources>
