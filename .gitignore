@@ -13,9 +13,7 @@
 .externalNativeBuild
 
 # Built application files
-*.apk
 *.abb
-*.ap_
 
 # Files for the ART/Dalvik VM
 *.dex
