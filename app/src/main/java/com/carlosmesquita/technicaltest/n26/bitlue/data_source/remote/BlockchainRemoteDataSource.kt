@@ -14,7 +14,7 @@ class BlockchainRemoteDataSource(
     private val defaultDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : DataSource<BlockchainResponseDTO> {
 
-    override suspend fun getBitcoinInfo(): Flow<BlockchainResponseDTO> = flow {
+    override fun getBitcoinInfo(): Flow<BlockchainResponseDTO> = flow {
         emit(blockchainAPI.getMarketPriceChart())
     }.flowOn(defaultDispatcher)
 }
