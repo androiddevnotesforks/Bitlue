@@ -53,11 +53,17 @@ class BitcoinValuesChart @JvmOverloads constructor(
         setupYAxis()
     }
 
-    fun setBitcoinValues(bitcoinValues: List<BitcoinValue>) {
+    fun show(bitcoinValues: List<BitcoinValue>) {
+        // To show loading message
+        data = null
+        invalidate()
+
         CoroutineScope(Dispatchers.Default).launch {
             data = getData(bitcoinValues)
 
             withContext(Dispatchers.Main) {
+                // To remove highlight value when new values are displayed
+                highlightValue(null)
                 animateX(CHART_X_ANIMATION_DURATION, DEFAULT_ANIMATION_EASING)
             }
         }

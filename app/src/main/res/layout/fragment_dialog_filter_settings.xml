@@ -3,18 +3,132 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.settings.filter.FilterSettingsDialogFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="@dimen/xxx_large"
-        android:text="FilterSettingsDialogFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <View
+        android:id="@+id/draggerBar"
+        android:layout_width="@dimen/xxxx_large"
+        android:layout_height="@dimen/medium"
+        android:layout_marginTop="@dimen/large"
+        android:background="@drawable/dragger_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/timeRangeFilter_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large"
+        android:text="@string/title_time_range"
+        android:textAppearance="@style/TextAppearance.Bitlue.Subtitle2"
+        app:layout_constraintStart_toEndOf="@+id/guideline_marginStart"
+        app:layout_constraintTop_toBottomOf="@+id/draggerBar" />
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/timeRangeFilter_optionsGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_marginEnd"
+        app:layout_constraintStart_toStartOf="@+id/timeRangeFilter_title"
+        app:layout_constraintTop_toBottomOf="@+id/timeRangeFilter_title"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/timeRangeFilter_30daysButton"
+            style="?materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Bitlue.Overline"
+            tools:text="30 Days" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/timeRangeFilter_1yearButton"
+            style="?materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Bitlue.Overline"
+            tools:text="1 Year" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/timeRangeFilter_3yearsButton"
+            style="?materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Bitlue.Overline"
+            tools:text="3 Years" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/timeRangeFilter_allTimeButton"
+            style="?materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Bitlue.Overline"
+            tools:text="All" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/rollingAverageFilter_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x_large"
+        android:text="@string/title_rolling_average"
+        android:textAppearance="@style/TextAppearance.Bitlue.Subtitle2"
+        app:layout_constraintStart_toEndOf="@+id/guideline_marginStart"
+        app:layout_constraintTop_toBottomOf="@+id/timeRangeFilter_optionsGroup" />
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/rollingAverageFilter_optionsGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large"
+        android:layout_marginBottom="@dimen/x_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_marginEnd"
+        app:layout_constraintStart_toStartOf="@+id/rollingAverageFilter_title"
+        app:layout_constraintTop_toBottomOf="@+id/rollingAverageFilter_title"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/rollingAverageFilter_rawValuesButton"
+            style="?materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Bitlue.Overline"
+            tools:text="Raw Values" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/rollingAverageFilter_7dayAverageButton"
+            style="?materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Bitlue.Overline"
+            tools:text="7 Day Average" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/rollingAverageFilter_30daysAverageButton"
+            style="?materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Bitlue.Overline"
+            tools:text="30 Day Average" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_marginStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/x_large" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_marginEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/x_large" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,22 +27,24 @@
                 android:id="@+id/infoTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/xxxx_large"
                 android:text="@{viewModel.infoTitle}"
                 android:textAppearance="@style/TextAppearance.Bitlue.Overline"
+                app:layout_constraintBottom_toTopOf="@id/currentBitcoinValue"
+                app:layout_constraintVertical_chainStyle="packed"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Bitcoin Value" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/bitcoinValue"
+                android:id="@+id/currentBitcoinValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium"
                 android:text="@{viewModel.currentBitcoinValue}"
                 android:textAppearance="@style/TextAppearance.Bitlue.Headline2"
                 android:textColor="?colorOnBackground"
+                app:layout_constraintBottom_toTopOf="@+id/guideline_33percent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/infoTitle"
@@ -53,26 +55,30 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="@dimen/medium"
-                android:layout_marginTop="@dimen/xxxx_large"
-                android:visibility="@{viewModel.dataLoading ? View.GONE : View.VISIBLE}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bitcoinValue" />
+                app:layout_constraintTop_toBottomOf="@id/guideline_33percent" />
 
             <ProgressBar
-                android:id="@+id/chartLoading"
+                android:id="@+id/loadingBar"
                 style="@style/Widget.MaterialComponents.CircularProgressIndicator"
                 android:layout_width="80dp"
                 android:layout_height="0dp"
                 android:indeterminate="true"
-                android:visibility="@{viewModel.dataLoading ? View.VISIBLE : View.GONE}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:visibility="gone" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_33percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.33" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -80,6 +86,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_margin="@dimen/x_large" />
+            android:layout_margin="@dimen/x_large"
+            android:src="@drawable/ic_filter"
+            tools:ignore="ContentDescription" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
