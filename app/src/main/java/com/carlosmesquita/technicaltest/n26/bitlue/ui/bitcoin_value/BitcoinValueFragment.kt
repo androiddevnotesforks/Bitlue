@@ -13,6 +13,7 @@ import com.carlosmesquita.technicaltest.n26.bitlue.databinding.FragmentBitcoinVa
 import com.carlosmesquita.technicaltest.n26.bitlue.ui.MainViewModel
 import com.carlosmesquita.technicaltest.n26.bitlue.ui.actions.MainEvents.BitcoinValueEvents
 import com.carlosmesquita.technicaltest.n26.bitlue.ui.actions.MainStates.BitcoinValueStates
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
@@ -40,6 +41,10 @@ class BitcoinValueFragment : Fragment(R.layout.fragment_bitcoin_value) {
         }
 
         collectUIStates()
+
+        viewModel.errorMessage.observe(viewLifecycleOwner) {
+            showErrorDialog(it ?: return@observe)
+        }
 
         viewModel.bitcoinValues.observe(viewLifecycleOwner) {
             binding.valuesChart.show(it)
@@ -98,5 +103,13 @@ class BitcoinValueFragment : Fragment(R.layout.fragment_bitcoin_value) {
 
     private fun sendEvent(event: BitcoinValueEvents) = lifecycleScope.launch {
         viewModel.eventsChannel.send(event)
+    }
+
+    private fun showErrorDialog(detailsMessage: String) {
+        MaterialAlertDialogBuilder(context ?: return)
+            .setTitle(R.string.title_unexpected_error)
+            .setMessage(getString(R.string.message_unexpected_error, detailsMessage))
+            .setPositiveButton(R.string.action_ok, null)
+            .show()
     }
 }
