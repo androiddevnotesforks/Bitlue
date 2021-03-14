@@ -3,6 +3,10 @@
 
     <string name="title_time_range">Time Range</string>
     <string name="title_rolling_average">Rolling Average</string>
+    <string name="title_unexpected_error">Ups!</string>
+
+    <string name="message_unexpected_error">Unexpected error happened. Please check details below.\n\nMore details: %s</string>
+    <string name="action_ok">OK</string>
 
     <string name="loading">Loading…</string>
 </resources>

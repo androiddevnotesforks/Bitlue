@@ -54,6 +54,11 @@ class MainViewModel @Inject constructor(
         stopLoading()
     }
 
+    val errorMessage = bitcoinInfoFlow
+        .filter { it is Result.Error }
+        .map { (it as Result.Error).throwable.message }
+        .asLiveData()
+
     val currentBitcoinValue = liveData {
         val firstSuccessResult = bitcoinInfoFlow
             .firstOrNull { it is Result.Success } as? Result.Success ?: return@liveData
