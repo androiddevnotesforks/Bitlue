@@ -42,7 +42,7 @@ class BitcoinValueFragment : Fragment(R.layout.fragment_bitcoin_value) {
         collectUIStates()
 
         viewModel.bitcoinValues.observe(viewLifecycleOwner) {
-            binding.valuesChart.setBitcoinValues(it)
+            binding.valuesChart.show(it)
         }
 
         binding.fab.setOnClickListener {
