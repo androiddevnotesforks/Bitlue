@@ -1,6 +1,8 @@
 package com.carlosmesquita.technicaltest.n26.bitlue.data_source.remote.api.blockchain
 
 import com.carlosmesquita.technicaltest.n26.bitlue.data_source.remote.api.blockchain.model.BlockchainResponseDTO
+import com.carlosmesquita.technicaltest.n26.bitlue.data_source.remote.api.blockchain.utils.FilterRollingAverage
+import com.carlosmesquita.technicaltest.n26.bitlue.data_source.remote.api.blockchain.utils.FilterTimeRange
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -18,7 +20,9 @@ interface BlockchainAPI {
 
     @GET("$CHARTS_ENDPOINT/$MARKET_PRICE_ENDPOINT")
     suspend fun getMarketPriceChart(
-        @Query(TIME_SPAN_QUERY) timeSpan: String = "1year",
-        @Query(ROLLING_AVERAGE_QUERY) rollingAverage: String = "8hours",
+        @Query(TIME_SPAN_QUERY) timeSpan: String =
+            FilterTimeRange.ONE_YEAR.queryText,
+        @Query(ROLLING_AVERAGE_QUERY) rollingAverage: String =
+            FilterRollingAverage.RAW_VALUES.queryText,
     ): BlockchainResponseDTO
 }
