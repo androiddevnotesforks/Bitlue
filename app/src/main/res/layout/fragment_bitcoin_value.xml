@@ -23,6 +23,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/themeToggle"
+                android:layout_width="48dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/x_large"
+                android:adjustViewBounds="true"
+                android:background="?selectableItemBackgroundBorderless"
+                android:padding="@dimen/large"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_day_night"
+                android:tint="?colorOnBackground"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/infoTitle"
                 android:layout_width="wrap_content"
@@ -30,10 +45,10 @@
                 android:text="@{viewModel.infoTitle}"
                 android:textAppearance="@style/TextAppearance.Bitlue.Overline"
                 app:layout_constraintBottom_toTopOf="@id/currentBitcoinValue"
-                app:layout_constraintVertical_chainStyle="packed"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
                 tools:text="Bitcoin Value" />
 
             <com.google.android.material.textview.MaterialTextView
@@ -66,12 +81,13 @@
                 android:layout_width="80dp"
                 android:layout_height="0dp"
                 android:indeterminate="true"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:visibility="gone" />
+                tools:visibility="visible" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline_33percent"

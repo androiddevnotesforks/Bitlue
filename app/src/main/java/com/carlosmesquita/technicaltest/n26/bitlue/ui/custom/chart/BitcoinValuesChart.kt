@@ -72,11 +72,13 @@ class BitcoinValuesChart @JvmOverloads constructor(
     private fun setupXAxis() {
         xAxis.valueFormatter = xAxisValueFormatter
         xAxis.gridColor = ContextCompat.getColor(context, R.color.gray_light)
+        xAxis.textColor = context.getThemeColor(R.attr.colorOnBackground)
         xAxis.setDrawAxisLine(false)
     }
 
     private fun setupYAxis() {
         axisLeft.valueFormatter = yAxisValueFormatter
+        axisLeft.textColor = context.getThemeColor(R.attr.colorOnBackground)
         axisLeft.setDrawAxisLine(false)
         axisLeft.setDrawZeroLine(false)
         axisLeft.setDrawGridLines(false)

@@ -50,6 +50,10 @@ class BitcoinValueFragment : Fragment(R.layout.fragment_bitcoin_value) {
             binding.valuesChart.show(it)
         }
 
+        binding.themeToggle.setOnClickListener {
+            sendEvent(BitcoinValueEvents.OnThemeToggleClicked)
+        }
+
         binding.fab.setOnClickListener {
             sendEvent(BitcoinValueEvents.OnFabClicked)
         }

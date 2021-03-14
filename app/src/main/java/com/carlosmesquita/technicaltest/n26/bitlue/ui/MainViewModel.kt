@@ -1,5 +1,6 @@
 package com.carlosmesquita.technicaltest.n26.bitlue.ui
 
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.*
 import com.carlosmesquita.technicaltest.n26.bitlue.BuildConfig
 import com.carlosmesquita.technicaltest.n26.bitlue.data_source.remote.api.blockchain.utils.FilterRollingAverage
@@ -93,6 +94,14 @@ class MainViewModel @Inject constructor(
         when (event) {
             BitcoinValueEvents.OnFabClicked -> {
                 sendStateToUI(BitcoinValueStates.OpenFilterSettings)
+            }
+
+            BitcoinValueEvents.OnThemeToggleClicked -> {
+                if (AppCompatDelegate.getDefaultNightMode() != AppCompatDelegate.MODE_NIGHT_YES) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                }
             }
 
             else -> {

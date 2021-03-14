@@ -17,7 +17,7 @@
         <item name="colorOnSurface">@color/white_50</item>
         <item name="colorOnError">@color/black_900</item>
 
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?colorPrimarySurface</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
     </style>

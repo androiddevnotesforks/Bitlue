@@ -7,6 +7,7 @@ sealed class MainEvents {
 
     sealed class BitcoinValueEvents : MainEvents() {
         object OnFabClicked : BitcoinValueEvents()
+        object OnThemeToggleClicked : BitcoinValueEvents()
     }
 
     sealed class FilterSettingsEvents : MainEvents() {
