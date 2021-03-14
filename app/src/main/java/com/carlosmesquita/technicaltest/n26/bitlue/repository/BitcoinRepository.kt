@@ -2,6 +2,8 @@ package com.carlosmesquita.technicaltest.n26.bitlue.repository
 
 import com.carlosmesquita.technicaltest.n26.bitlue.data_source.remote.BlockchainRemoteDataSource
 import com.carlosmesquita.technicaltest.n26.bitlue.data_source.remote.api.blockchain.model.mapper.BlockchainResponseDTOMapper
+import com.carlosmesquita.technicaltest.n26.bitlue.data_source.remote.api.blockchain.utils.FilterRollingAverage
+import com.carlosmesquita.technicaltest.n26.bitlue.data_source.remote.api.blockchain.utils.FilterTimeRange
 import com.carlosmesquita.technicaltest.n26.bitlue.ui.model.BitcoinRecordInfo
 import com.carlosmesquita.technicaltest.n26.bitlue.utils.Result
 import kotlinx.coroutines.CoroutineDispatcher
@@ -16,8 +18,11 @@ class BitcoinRepository(
     private val defaultDispatcher: CoroutineDispatcher = Dispatchers.Default
 ) {
 
-    fun getBitcoinInfo(): Flow<Result<BitcoinRecordInfo>> =
-        blockchainRemoteDataSource.getBitcoinInfo()
+    fun getBitcoinInfo(
+        timeSpan: FilterTimeRange,
+        rollingAverage: FilterRollingAverage
+    ): Flow<Result<BitcoinRecordInfo>> =
+        blockchainRemoteDataSource.getBitcoinInfo(timeSpan, rollingAverage)
             .map {
                 val mappedResponse = blockchainResponseDTOMapper.mapToDomainModel(it)
 
