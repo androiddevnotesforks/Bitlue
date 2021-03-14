@@ -6,7 +6,9 @@ import com.carlosmesquita.technicaltest.n26.bitlue.ui.model.BitcoinRecordInfo
 import com.carlosmesquita.technicaltest.n26.bitlue.utils.Result
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 
 class BitcoinRepository(
     private val blockchainRemoteDataSource: BlockchainRemoteDataSource,
@@ -14,14 +16,12 @@ class BitcoinRepository(
     private val defaultDispatcher: CoroutineDispatcher = Dispatchers.Default
 ) {
 
-    suspend fun getBitcoinInfo(): Flow<Result<BitcoinRecordInfo>> =
+    fun getBitcoinInfo(): Flow<Result<BitcoinRecordInfo>> =
         blockchainRemoteDataSource.getBitcoinInfo()
-            .onStart { Result.Loading() }
             .map {
                 val mappedResponse = blockchainResponseDTOMapper.mapToDomainModel(it)
 
                 Result.Success(mappedResponse)
             }
             .flowOn(defaultDispatcher)
-            .catch { Result.Error(it) }
 }
