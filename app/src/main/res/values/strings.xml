@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Bitlue</string>
+
+    <string name="title_time_range">Time Range</string>
+    <string name="title_rolling_average">Rolling Average</string>
+
     <string name="loading">Loading…</string>
 </resources>
